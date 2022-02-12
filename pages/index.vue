@@ -35,7 +35,7 @@
         <li v-for="(datadone,i) in listdone" :key="i">
     <div style="display:flex; align-item:center; justify-content:flex-between;">
         
-        <div class="form-check">
+        <div class="form-check" @click="changeListDone" >
         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
         <label class="form-check-label" for="defaultCheck1">
         </label>
@@ -83,8 +83,8 @@ export default {
       this.listdone.splice(datalist.target.parentNode.parentNode.dataset.index, 1);
     },
     changeListDone(listdone) {
-      this.todolist.push(this.listdone[datalist.target.parentNode.parentNode.dataset.index]);
-      this.listdone.splice(datadone.target.parentNode.parentNode.dataset.index, 1);
+      this.todolist.push(this.listdone[listdone.target.parentNode.parentNode.dataset.index]);
+      this.listdone.splice(listdone.target.parentNode.parentNode.dataset.index, 1);
     }
   },
   
